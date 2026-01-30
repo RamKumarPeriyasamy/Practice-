@@ -25,7 +25,7 @@ pipeline {
         SOCKET_CONTAINER = 'DwinzoSocket_V0_end'
         MONGO_CONTAINER = 'mongo_V0-Dwinzocontainer'
         NETWORK_NAME = 'DwinzoMajor'
-        SONAR_HOST_URL = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL = 'http://127.0.0.0:12345'
         SONAR_TOKEN = credentials('sonarqube-token')
         SMTP_CREDENTIALS = credentials('smtp-credentials-gmail')
         WEBSITE_URL = 'http://localhost:4999'
@@ -42,7 +42,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Dwinzo-Beta/Dwinzo-Backend-V0.0.git',
+                            url: 'http://127.0.0.0:7778/Dwinzo-Beta/Dwinzo-Backend-V0.0.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -459,14 +459,14 @@ sonar.language=ts
                                         <div class="quick-access">
                                             <div class="quick-access-title">⚡ Quick Access</div>
                                             <div class="button-row">
-                                                <a href="http://185.100.212.76:4999/" class="access-button">🌐 API Server</a>
-                                                <a href="http://185.100.212.76:7999/" class="access-button">🔌 Socket Server</a>
-                                                <a href="http://185.100.212.76:27022" class="access-button">🗄️ MongoDB</a>
+                                                <a href="http://127.0.0.0:4999/" class="access-button">🌐 API Server</a>
+                                                <a href="http://127.0.0.0:7999/" class="access-button">🔌 Socket Server</a>
+                                                <a href="http://127.0.0.0:27022" class="access-button">🗄️ MongoDB</a>
                                             </div>
                                             <div class="button-row">
                                                 <a href="${env.SONAR_HOST_URL}/dashboard?id=Dwinzo_Demo_Backend" class="access-button">🕵️ SonarQube</a>
-                                                <a href="http://185.100.212.76:1234/blue/organizations/jenkins/DwinzoBeta_Backend-Demo/detail/DwinzoBeta_Backend-Demo/${env.BUILD_NUMBER}/pipeline" class="access-button">📊 View Build</a>
-                                                <a href="http://185.100.212.76:5678/a/grafana-metricsdrilldown-app/drilldown?...&nativeHistogramMetric=&layout=grid&filters-rule=&filters-prefix=&filters-suffix=&from=now-1h&to=now&timezone=Asia%2FKolkata&var-otel_resources=&var-filters=&var-otel_and_metric_filters=&var-deployment_environment=undefined&var-labelsWingman=%28none%29&search_txt=&var-metrics-reducer-sort-by=default&var-ds=celq68dj5iltsa&var-other_metric_filters=" class="access-button">📈 Grafana</a>
+                                                <a href="http://127.0.0.0:1234/blue/organizations/jenkins/DwinzoBeta_Backend-Demo/detail/DwinzoBeta_Backend-Demo/${env.BUILD_NUMBER}/pipeline" class="access-button">📊 View Build</a>
+                                                <a href="http://127.0.0.0:5678/a/grafana-metricsdrilldown-app/drilldown?...&nativeHistogramMetric=&layout=grid&filters-rule=&filters-prefix=&filters-suffix=&from=now-1h&to=now&timezone=Asia%2FKolkata&var-otel_resources=&var-filters=&var-otel_and_metric_filters=&var-deployment_environment=undefined&var-labelsWingman=%28none%29&search_txt=&var-metrics-reducer-sort-by=default&var-ds=celq68dj5iltsa&var-other_metric_filters=" class="access-button">📈 Grafana</a>
                                             </div>
                                         </div>
                             

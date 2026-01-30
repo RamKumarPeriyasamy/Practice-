@@ -21,7 +21,7 @@ pipeline {
 
     environment {
         GIT_CREDENTIALS   = credentials('ramkumarp')
-        SONAR_HOST_URL    = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL    = 'http://127.0.0.0:12345'
         SONAR_TOKEN       = credentials('sonarqube-token')
         SMTP_CREDENTIALS  = credentials('smtp-credentials-gmail')
     }
@@ -35,7 +35,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main-demo']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Dwinzo-Beta/Dwinzo_Demo.git',
+                            url: 'http://127.0.0.0:7778/Dwinzo-Beta/Dwinzo_Demo.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -508,7 +508,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
                                                 </div>
                                             </a>
                                             
-                                            <a href="http://185.100.212.76:12345/dashboard?id=Aalai_Fronend_V.0.3" class="report-link">
+                                            <a href="http://127.0.0.0:12345/dashboard?id=Aalai_Fronend_V.0.3" class="report-link">
                                                 <div class="link-content">
                                                     <div class="link-icon">📈</div>
                                                     <div class="link-text">

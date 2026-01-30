@@ -41,7 +41,7 @@ pipeline {
                     checkout([$class: 'GitSCM',
                         branches: [[name: 'main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Vishnu/rccl_vallam_project.git',
+                            url: 'http://127.0.0.0:7778/Vishnu/rccl_vallam_project.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]],
                         extensions: [

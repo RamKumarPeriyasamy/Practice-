@@ -30,7 +30,7 @@ pipeline {
         DOCKER_COMPOSE = 'docker-compose'           // Docker Compose command alias
         APP_NAME = 'Dwinzo-Beta/Dwinzo_dev'         // Application name
         MAIN_CONTAINER = 'dwinzo-beta'              // Main container name
-        SONAR_HOST_URL = 'http://185.100.212.76:12345' // SonarQube server URL
+        SONAR_HOST_URL = 'http://127.0.0.0:12345' // SonarQube server URL
         SONAR_TOKEN = credentials('sonarqube-token')   // SonarQube authentication token
     }
 
@@ -50,7 +50,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git',
+                            url: 'http://127.0.0.0:7776/Dwinzo-Beta/Dwinzo_dev.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])

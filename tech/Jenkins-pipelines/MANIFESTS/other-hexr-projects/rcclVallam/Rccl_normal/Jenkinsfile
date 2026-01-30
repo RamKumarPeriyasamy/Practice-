@@ -22,10 +22,10 @@ pipeline {
         DOCKER_COMPOSE = 'docker-compose'
         APP_NAME = 'vishnu/rccl_vallam_project'
         MAIN_CONTAINER = 'rccl_vallam' 
-        SONAR_HOST_URL = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL = 'http://127.0.0.0:12345'
         SONAR_TOKEN = credentials('sonarqube-token')  
         SMTP_CREDENTIALS = credentials('smtp-credentials-gmail')
-        WEBSITE_URL = 'http://185.100.212.76:4080'
+        WEBSITE_URL = 'http://127.0.0.0:4080'
     }
 
     stages {
@@ -40,7 +40,7 @@ pipeline {
                             $class: 'GitSCM',
                             branches: [[name: '*/main']],
                             userRemoteConfigs: [[
-                                url: 'http://185.100.212.76:7778/Vishnu/rccl_vallam_project.git',
+                                url: 'http://127.0.0.0:7778/Vishnu/rccl_vallam_project.git',
                                 credentialsId: env.GIT_CREDENTIALS
                             ]],
                             extensions: [
@@ -294,7 +294,7 @@ sonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/public/**,**/*.min
                         <tr>
                             <td style="padding:15px 20px; border-bottom:1px solid rgba(89,98,53,0.1); color:#2c3e50; background:white;"><strong>SonarQube Analysis</strong></td>
                             <td style="padding:15px 20px; border-bottom:1px solid rgba(89,98,53,0.1); color:#2c3e50; background:white;">
-                                <a href="http://185.100.212.76:12345/dashboard?id=RCCL_Vallam_Project" style="color: #596235; text-decoration: none;">View Quality Report</a>
+                                <a href="http://127.0.0.0:12345/dashboard?id=RCCL_Vallam_Project" style="color: #596235; text-decoration: none;">View Quality Report</a>
                             </td>
                         </tr>
                         """ : """
@@ -316,7 +316,7 @@ sonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/public/**,**/*.min
                 ${buildResult == 'SUCCESS' ? """
                 <a href="${env.WEBSITE_URL}" class="btn btn-success" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#596235; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🌐 View Live Website</a>
                 <a href="${env.BUILD_URL}" class="btn btn-primary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#D96846; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📋 View Build Log</a>
-                <a href="http://185.100.212.76:12345/dashboard?id=RCCL_Vallam_Project" class="btn btn-secondary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Quality Report</a>
+                <a href="http://127.0.0.0:12345/dashboard?id=RCCL_Vallam_Project" class="btn btn-secondary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Quality Report</a>
                 """ : """
                 <a href="${env.BUILD_URL}console" class="btn btn-primary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#D96846; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📋 View Build Log</a>
                 <a href="${env.BUILD_URL}" class="btn btn-secondary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Build Details</a>

@@ -51,7 +51,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/IIoT-Dwinzo/Dwinzo-IIoT-Backend.git',
+                            url: 'http://127.0.0.0:7776/IIoT-Dwinzo/Dwinzo-IIoT-Backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])

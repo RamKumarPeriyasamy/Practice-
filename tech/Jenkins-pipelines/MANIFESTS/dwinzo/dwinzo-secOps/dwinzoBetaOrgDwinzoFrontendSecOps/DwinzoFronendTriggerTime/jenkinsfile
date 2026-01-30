@@ -12,7 +12,7 @@ pipeline {
         DOCKER_COMPOSE      = 'docker-compose'
         APP_NAME            = 'Dwinzo-Beta/Dwinzo_dev'
         MAIN_CONTAINER      = 'dwinzo-beta'
-        SONAR_HOST_URL      = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL      = 'http://127.0.0.0:12345'
         SONAR_TOKEN         = credentials('sonarqube-token')
         SMTP_CREDENTIALS    = credentials('smtp-credentials-gmail')
     }
@@ -30,7 +30,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git',
+                            url: 'http://127.0.0.0:7776/Dwinzo-Beta/Dwinzo_dev.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -337,7 +337,7 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
                     <div class="reports-container">
                         <div class="report-item">
                             <div class="report-name">📈 SonarQube Code Quality Dashboard</div>
-                            <a href="http://185.100.212.76:12345/" target="_blank" class="report-link">Access SonarQube Dashboard →</a>
+                            <a href="http://127.0.0.0:12345/" target="_blank" class="report-link">Access SonarQube Dashboard →</a>
                         </div>
                         <div class="report-item">
                             <div class="report-name">🔍 Software Composition Analysis (SCA)</div>
@@ -381,14 +381,14 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
                         <tr>
                             <td align="center" style="padding: 20px;">
                                 <div style="margin-bottom: 15px; text-align:center;">
-                                    <a href="http://185.100.212.76:8200/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🌐 Application URL</a>
-                                    <a href="http://185.100.212.76:1234/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🤖 Jenkins Dashboard</a>
-                                    <a href="http://185.100.212.76:12345/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🕵️ SonarQube</a>
+                                    <a href="http://127.0.0.0:8200/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🌐 Application URL</a>
+                                    <a href="http://127.0.0.0:1234/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🤖 Jenkins Dashboard</a>
+                                    <a href="http://127.0.0.0:12345/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🕵️ SonarQube</a>
 
                                 </div>
                                 <div style="text-align:center;">
-                                    <a href="http://185.100.212.76:1234/job/Dwinzo-Beta-Sonar/lastSuccessfulBuild/artifact/sca-report/dependency-check-report.html" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🛡️ OWASP Dependency-Check</a>
-                                    <a href="http://185.100.212.76:5678/a/grafana-metricsdrilldown-app/drilldown?..." target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">👁️ Grafana Dashboard</a>
+                                    <a href="http://127.0.0.0:1234/job/Dwinzo-Beta-Sonar/lastSuccessfulBuild/artifact/sca-report/dependency-check-report.html" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">🛡️ OWASP Dependency-Check</a>
+                                    <a href="http://127.0.0.0:5678/a/grafana-metricsdrilldown-app/drilldown?..." target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); color:#fff; padding:14px 28px; border-radius:25px; text-decoration:none; font-weight:600; font-size:14px; display:inline-block; margin:8px 10px;">👁️ Grafana Dashboard</a>
                                 </div>
                             </td>
                         </tr>

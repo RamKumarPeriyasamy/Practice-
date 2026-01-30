@@ -23,7 +23,7 @@ pipeline {
         GIT_CREDENTIALS     = credentials('rithishsamm')
         DOCKER_COMPOSE      = 'docker-compose'
         APP_NAME            = 'Sabarinathan/marketplace_Dwnizo_backend'
-        SONAR_HOST_URL      = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL      = 'http://127.0.0.0:12345'
         SONAR_TOKEN         = 'sqp_cc103cf68c3551314d644ab5372568e12a9b0c97'
         SMTP_CREDENTIALS    = credentials('smtp-credentials-gmail')
 
@@ -46,7 +46,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/sub_branch_Nivetha']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
+                            url: 'http://127.0.0.0:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -364,7 +364,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
                 <div class="report-description">
                     Comprehensive code quality metrics, security hotspots, and maintainability analysis
                 </div>
-                <a href="http://185.100.212.76:12345/" class="btn-primary">Open SonarQube Dashboard</a>
+                <a href="http://127.0.0.0:12345/" class="btn-primary">Open SonarQube Dashboard</a>
             </div>
         </div>
 
@@ -398,12 +398,12 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
             <div class="actions-title">🚀 Quick Access Dashboard</div>
             <table class="actions-grid">
                 <tr>
-                    <td><a href="http://185.100.212.76:8200/" class="btn-action">🌐 Marketplace Application</a></td>
-                    <td><a href="http://185.100.212.76:1234/" class="btn-action btn-secondary">🤖 Jenkins CI/CD</a></td>
+                    <td><a href="http://127.0.0.0:8200/" class="btn-action">🌐 Marketplace Application</a></td>
+                    <td><a href="http://127.0.0.0:1234/" class="btn-action btn-secondary">🤖 Jenkins CI/CD</a></td>
                 </tr>
                 <tr>
                     <td><a href="${env.BUILD_URL}artifact/backend-sca-report/dependency-check-report.html" class="btn-action btn-success">🛡️ Security Reports</a></td>
-                    <td><a href="http://185.100.212.76:5678/" class="btn-action btn-warning">📊 Grafana Monitoring</a></td>
+                    <td><a href="http://127.0.0.0:5678/" class="btn-action btn-warning">📊 Grafana Monitoring</a></td>
                 </tr>
             </table>
         </div>
@@ -457,10 +457,10 @@ Date: ${currentTime}
 Branch: ${env.BRANCH_NAME ?: 'main'}
 
 Platform Access:
-- Marketplace App: http://185.100.212.76:8200/
+- Marketplace App: http://127.0.0.0:8200/
 - Jenkins Pipeline: ${env.BUILD_URL}
-- SonarQube Analysis: http://185.100.212.76:12345/
-- Grafana Monitoring: http://185.100.212.76:5678/
+- SonarQube Analysis: http://127.0.0.0:12345/
+- Grafana Monitoring: http://127.0.0.0:5678/
 
 Security Reports Generated:
 ✓ OWASP Dependency Check - Vulnerability Assessment

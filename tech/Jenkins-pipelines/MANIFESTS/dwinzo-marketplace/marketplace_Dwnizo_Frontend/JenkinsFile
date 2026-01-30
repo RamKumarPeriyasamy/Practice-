@@ -39,7 +39,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/feature/dwinzo-update']],
                         userRemoteConfigs: [[
-                            url: 'http://ramkumar@hexrfactory.com:Ramkumar@123@185.100.212.76:7778/Marketplace/MarketPlace_FrontEnd.git',
+                            url: 'http://ramkumar@hexrfactory.com:Ramkumar@123@127.0.0.0:7778/Marketplace/MarketPlace_FrontEnd.git',
                             
                         ]]
                     ])

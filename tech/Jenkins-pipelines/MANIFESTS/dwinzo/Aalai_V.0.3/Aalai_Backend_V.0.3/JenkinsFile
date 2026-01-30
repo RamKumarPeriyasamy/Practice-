@@ -38,7 +38,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/Bkd_9901']],
                         userRemoteConfigs: [[
-                            url: 'http://ramkumar@hexrfactory.com:Ramkumar@123@185.100.212.76:7778/Dwinzo/Dwinzo-Backend.git',
+                            url: 'http://ramkumar@hexrfactory.com:Ramkumar@123@127.0.0.0:7778/Dwinzo/Dwinzo-Backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -627,7 +627,7 @@ pipeline {
                                                                 <div class="service-status">
                                                                     <span class="status-badge status-running">RUNNING</span>
                                                                 </div>
-                                                                <a href="http://185.100.212.76:9941" class="service-link">Port: 9941</a>
+                                                                <a href="http://127.0.0.0:9941" class="service-link">Port: 9941</a>
                                                             </div>
                                                         </div>
                                                         
@@ -640,7 +640,7 @@ pipeline {
                                                                 <div class="service-status">
                                                                     <span class="status-badge status-running">RUNNING</span>
                                                                 </div>
-                                                                <a href="http://185.100.212.76:9942" class="service-link">Port: 9942</a>
+                                                                <a href="http://127.0.0.0:9942" class="service-link">Port: 9942</a>
                                                             </div>
                                                         </div>
                                                         
@@ -653,7 +653,7 @@ pipeline {
                                                                 <div class="service-status">
                                                                     <span class="status-badge status-running">RUNNING</span>
                                                                 </div>
-                                                                <a href="http://185.100.212.76:9903" class="service-link">Port: 9903</a>
+                                                                <a href="http://127.0.0.0:9903" class="service-link">Port: 9903</a>
                                                             </div>
                                                         </div>
                                                         
@@ -666,7 +666,7 @@ pipeline {
                                                                 <div class="service-status">
                                                                     <span class="status-badge status-running">RUNNING</span>
                                                                 </div>
-                                                                <a href="http://185.100.212.76:5678" class="service-link">Port: 5678</a>
+                                                                <a href="http://127.0.0.0:5678" class="service-link">Port: 5678</a>
                                                             </div>
                                                         </div>
                                                         
@@ -679,7 +679,7 @@ pipeline {
                                                                 <div class="service-status">
                                                                     <span class="status-badge status-running">RUNNING</span>
                                                                 </div>
-                                                                <a href="http://185.100.212.76:6789" class="service-link">Port: 6789</a>
+                                                                <a href="http://127.0.0.0:6789" class="service-link">Port: 6789</a>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -690,10 +690,10 @@ pipeline {
                                             <table role="presentation" class="actions-table" cellspacing="0" cellpadding="0" border="0">
                                                 <tr>
                                                     <td>
-                                                        <a href="http://185.100.212.76:8080" class="btn btn-primary">
+                                                        <a href="http://127.0.0.0:8080" class="btn btn-primary">
                                                             🔗 View Build Details
                                                         </a>
-                                                        <a href="http://185.100.212.76:8080" class="btn btn-secondary">
+                                                        <a href="http://127.0.0.0:8080" class="btn btn-secondary">
                                                             📥 Download Logs
                                                         </a>
                                                     </td>

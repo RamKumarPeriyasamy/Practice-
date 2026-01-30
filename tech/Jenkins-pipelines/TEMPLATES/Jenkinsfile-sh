@@ -25,7 +25,7 @@ pipeline {
                 
                 // Checkout with specific credentials and branch
                 git credentialsId: env.GIT_CREDENTIALS_ID,
-                    url: 'http://185.100.212.76:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
+                    url: 'http://127.0.0.0:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
                     branch: 'sub_branch_Nivetha'
                 
                 // Print source information for debugging using PowerShell
@@ -197,7 +197,7 @@ pipeline {
                 
 //                 // Checkout code using Git credentials
 //                 git credentialsId: env.GIT_CREDENTIALS_ID,
-//                     url: 'http://185.100.212.76:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
+//                     url: 'http://127.0.0.0:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
 //                     branch: 'sub_branch_Nivetha'
                 
 //                 // Print acknowledgment of successful source code retrieval

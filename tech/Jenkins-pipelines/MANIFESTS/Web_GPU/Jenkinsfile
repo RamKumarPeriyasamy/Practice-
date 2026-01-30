@@ -24,10 +24,10 @@ pipeline {
         DOCKER_COMPOSE = 'docker-compose'
         APP_NAME = 'webgpu-3d-engine'
         MAIN_CONTAINER = 'webgpu-app'
-        SONAR_HOST_URL = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL = 'http://127.0.0.0:12345'
         SONAR_TOKEN = credentials('sonarqube-token')
         SMTP_CREDENTIALS = credentials('smtp-credentials-gmail')
-        WEBSITE_URL = 'https://185.100.212.76:5505'
+        WEBSITE_URL = 'https://127.0.0.0:5505'
     }
 
     stages {
@@ -43,7 +43,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/Updated']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Core-Engine/Web_GPU_Live.git',
+                            url: 'http://127.0.0.0:7778/Core-Engine/Web_GPU_Live.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -446,7 +446,7 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
                         <tr>
                             <td style="padding:15px 20px; border-bottom:1px solid rgba(89,98,53,0.1); color:#2c3e50; background:white;"><strong>SonarQube Report</strong></td>
                             <td style="padding:15px 20px; border-bottom:1px solid rgba(89,98,53,0.1); color:#2c3e50; background:white;">
-                                <a href="http://185.100.212.76:12345/dashboard?id=webgpu-3d-engine" style="color: #596235; text-decoration: none;">View Quality Report</a>
+                                <a href="http://127.0.0.0:12345/dashboard?id=webgpu-3d-engine" style="color: #596235; text-decoration: none;">View Quality Report</a>
                             </td>
                         </tr>
                         ${buildResult == 'FAILURE' ? '''
@@ -464,7 +464,7 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
                 ${buildResult == 'SUCCESS' ? """
                 <a href="${env.WEBSITE_URL}" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#596235; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🎮 View 3D App</a>
                 <a href="${env.BUILD_URL}" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#D96846; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📋 Build Log</a>
-                <a href="http://185.100.212.76:12345/dashboard?id=webgpu-3d-engine" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Sonar Report</a>
+                <a href="http://127.0.0.0:12345/dashboard?id=webgpu-3d-engine" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Sonar Report</a>
                 """ : """
                 <a href="${env.BUILD_URL}console" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#D96846; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📋 View Logs</a>
                 <a href="${env.BUILD_URL}" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#596235; border:2px solid #596235; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🔍 Build Details</a>

@@ -40,7 +40,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: 'main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/rithishsamm/aalai-static-frontend.git',
+                            url: 'http://127.0.0.0:7778/rithishsamm/aalai-static-frontend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]],
                         extensions: [

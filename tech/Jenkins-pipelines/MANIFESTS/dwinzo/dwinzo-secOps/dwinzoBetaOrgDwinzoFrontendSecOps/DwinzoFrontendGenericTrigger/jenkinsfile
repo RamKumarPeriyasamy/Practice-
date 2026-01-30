@@ -24,7 +24,7 @@ pipeline {
         DOCKER_COMPOSE          = 'docker-compose'
         APP_NAME                = 'Dwinzo-Beta/Dwinzo_dev'
         MAIN_CONTAINER          = 'dwinzo-beta'
-        SONAR_HOST_URL          = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL          = 'http://127.0.0.0:12345'
         SONAR_TOKEN             = credentials('sonarqube-token')
         SMTP_CREDENTIALS        = credentials('smtp-credentials-gmail')
     }
@@ -42,7 +42,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git',
+                            url: 'http://127.0.0.0:7776/Dwinzo-Beta/Dwinzo_dev.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -227,7 +227,7 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
                             <li>SCA Report: <a href="${env.BUILD_URL}/artifact/sca-report/dependency-check-report.html" style="color: #3b1f7d; font-weight: bold; text-decoration: underline;">Dependency-Check HTML Report</a></li>
                             <li>Gitleaks Report: Attached (SARIF & JSON)</li>
                             <li>Trivy Image Scans: Attached SARIF files</li>
-                            <li>Sonar Dashboard: <a href="http://185.100.212.76:12345/" style="color: #3b1f7d; font-weight: bold; text-decoration: underline;">SonarQube</a></li>
+                            <li>Sonar Dashboard: <a href="http://127.0.0.0:12345/" style="color: #3b1f7d; font-weight: bold; text-decoration: underline;">SonarQube</a></li>
                         </ul>
                 
                         <h3 style="color: #3b1f7d;">SonarQube Login (For Review)</h3>

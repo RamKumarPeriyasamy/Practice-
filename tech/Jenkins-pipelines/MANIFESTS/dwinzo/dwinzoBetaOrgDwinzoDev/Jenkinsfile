@@ -39,7 +39,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_dev.git',
+                            url: 'http://127.0.0.0:7776/Dwinzo-Beta/Dwinzo_dev.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -140,4 +140,4 @@ pipeline {
 
 // Pipeline script for Windows environment using PowerShell
 // Handles Node.js app deployment with Docker Compose
-//This is a pipeline that launches the application by GITEA ORG, Dwinzo-Beta/Dwinzo_beta, getting from http://185.100.212.76:7776/Dwinzo-Beta/Dwinzo_beta.git, and launches the app to the remote Windows server.
+//This is a pipeline that launches the application by GITEA ORG, Dwinzo-Beta/Dwinzo_beta, getting from http://127.0.0.0:7776/Dwinzo-Beta/Dwinzo_beta.git, and launches the app to the remote Windows server.

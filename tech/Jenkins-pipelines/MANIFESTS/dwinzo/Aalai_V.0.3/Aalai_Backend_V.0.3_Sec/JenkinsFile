@@ -22,7 +22,7 @@ pipeline {
         DOCKER_COMPOSE      = 'docker-compose'
         APP_NAME            = 'aalai_backend_demo'
         MAIN_CONTAINER      = 'aalai_demo_api_end'
-        SONAR_HOST_URL      = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL      = 'http://127.0.0.0:12345'
         SONAR_TOKEN         = credentials('sonarqube-token')
         SMTP_CREDENTIALS    = credentials('smtp-credentials-gmail')
     }
@@ -36,7 +36,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/Bkd_9901']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Dwinzo/Dwinzo-Backend.git',
+                            url: 'http://127.0.0.0:7778/Dwinzo/Dwinzo-Backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])

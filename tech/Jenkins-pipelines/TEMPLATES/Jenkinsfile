@@ -51,7 +51,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/sub_branch_Nivetha']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
+                            url: 'http://127.0.0.0:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -220,7 +220,7 @@ pipeline {
 //                         $class: 'GitSCM',
 //                         branches: [[name: '*/sub_branch_Nivetha']],
 //                         userRemoteConfigs: [[
-//                             url: 'http://185.100.212.76:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
+//                             url: 'http://127.0.0.0:7776/Sabarinathan/marketplace_Dwnizo_backend.git',
 //                             credentialsId: env.GIT_CREDENTIALS
 //                         ]]
 //                     ])

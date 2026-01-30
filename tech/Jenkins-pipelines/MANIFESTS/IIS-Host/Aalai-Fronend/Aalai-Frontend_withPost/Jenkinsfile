@@ -40,7 +40,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: 'main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/rithishsamm/aalai-static-frontend.git',
+                            url: 'http://127.0.0.0:7778/rithishsamm/aalai-static-frontend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]],
                         extensions: [
@@ -287,7 +287,7 @@ pipeline {
                                     <div class="actions" style="text-align:center; margin:35px 0;">
                                         <a href="${env.WEBSITE_URL}" class="btn btn-success" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#6A4CEB; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(106, 76, 235, 0.3);">🌐 Visit Website</a>
                                         <a href="#" class="btn btn-primary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:#4285F4; color:white; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(66, 133, 244, 0.3);">📋 View Build Log</a>
-                                        <a href="http://185.100.212.76:7778/rithishsamm/aalai-static-frontend" class="btn btn-secondary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#6A4CEB; border:2px solid #6A4CEB; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📁 Git Repository</a>
+                                        <a href="http://127.0.0.0:7778/rithishsamm/aalai-static-frontend" class="btn btn-secondary" style="display:inline-block; padding:15px 30px; margin:10px 15px; border-radius:12px; background:white; color:#6A4CEB; border:2px solid #6A4CEB; text-decoration:none; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.5px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">📁 Git Repository</a>
                                     </div>
                         
                                     <!-- Notes -->

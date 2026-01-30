@@ -22,10 +22,10 @@ pipeline {
         DOCKER_COMPOSE = 'docker-compose'
         APP_NAME = 'vishnu/aalai-website'
         MAIN_CONTAINER = 'aalai-react-vite'
-        SONAR_HOST_URL = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL = 'http://127.0.0.0:12345'
         SONAR_TOKEN = credentials('sonarqube-token')
         SMTP_CREDENTIALS = credentials('smtp-credentials-gmail')
-        WEBSITE_URL = 'http://185.100.212.76:4040'
+        WEBSITE_URL = 'http://127.0.0.0:4040'
     }
 
     stages {
@@ -40,7 +40,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Vishnu/aalai-website.git',
+                            url: 'http://127.0.0.0:7778/Vishnu/aalai-website.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]],
                         extensions: [
@@ -216,7 +216,7 @@ sonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/public/**,**/*.min
                                            <div class="header-top">
                                             <div></div>
                                             <div class="website-tag">
-                                                <a href="http://185.100.212.76:4040/" target="_blank" style="text-decoration: none; color: inherit;">
+                                                <a href="http://127.0.0.0:4040/" target="_blank" style="text-decoration: none; color: inherit;">
                                                     Aalai.ai/website
                                                 </a>
                                             </div>
@@ -300,11 +300,11 @@ sonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/public/**,**/*.min
                                                         ${buildResult == 'SUCCESS' ? """
                                                         <tr>
                                                             <td><strong>Website URL</strong></td>
-                                                            <td><a href="http://185.100.212.76:4040" style="color: #667eea; text-decoration: none;">http://185.100.212.76:4040</a></td>
+                                                            <td><a href="http://127.0.0.0:4040" style="color: #667eea; text-decoration: none;">http://127.0.0.0:4040</a></td>
                                                         </tr>
                                                         <tr>
                                                             <td><strong>SonarQube Analysis</strong></td>
-                                                            <td><a href="http://185.100.212.76:12345/dashboard?id=Dwinzo_Beta_Website" style="color: #667eea; text-decoration: none;">View Quality Report</a></td>
+                                                            <td><a href="http://127.0.0.0:12345/dashboard?id=Dwinzo_Beta_Website" style="color: #667eea; text-decoration: none;">View Quality Report</a></td>
                                                         </tr>
                                                         """ : """
                                                         <tr>
@@ -323,9 +323,9 @@ sonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/public/**,**/*.min
                                             <!-- Action Buttons -->
                                             <div class="actions">
                                                 ${buildResult == 'SUCCESS' ? """
-                                                <a href="http://185.100.212.76:4040" class="btn btn-success">🌐 View Live Website</a>
+                                                <a href="http://127.0.0.0:4040" class="btn btn-success">🌐 View Live Website</a>
                                                 <a href="${env.BUILD_URL}" class="btn btn-primary">📋 View Build Log</a>
-                                                <a href="http://185.100.212.76:12345/dashboard?id=Dwinzo_Beta_Website" class="btn btn-secondary">🔍 Quality Report</a>
+                                                <a href="http://127.0.0.0:12345/dashboard?id=Dwinzo_Beta_Website" class="btn btn-secondary">🔍 Quality Report</a>
                                                 """ : """
                                                 <a href="${env.BUILD_URL}console" class="btn btn-primary">📋 View Build Log</a>
                                                 <a href="${env.BUILD_URL}" class="btn btn-secondary">🔍 Build Details</a>

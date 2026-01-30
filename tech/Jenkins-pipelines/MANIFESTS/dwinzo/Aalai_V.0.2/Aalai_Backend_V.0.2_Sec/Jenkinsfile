@@ -21,7 +21,7 @@ pipeline {
         GIT_CREDENTIALS         = credentials('ramkumarp')
         DOCKER_COMPOSE          = 'docker-compose'
         APP_NAME                = 'Dwinzo/Dwinzo-Backend'
-        SONAR_HOST_URL          = 'http://185.100.212.76:12345'
+        SONAR_HOST_URL          = 'http://127.0.0.0:12345'
         SONAR_TOKEN             = credentials('sonarqube-token')
         SMTP_CREDENTIALS        = credentials('smtp-credentials-gmail')
     }
@@ -38,7 +38,7 @@ pipeline {
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
-                            url: 'http://185.100.212.76:7778/Dwinzo/Dwinzo-Backend.git',
+                            url: 'http://127.0.0.0:7778/Dwinzo/Dwinzo-Backend.git',
                             credentialsId: env.GIT_CREDENTIALS
                         ]]
                     ])
@@ -267,7 +267,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
         <table width="100%" border="0" cellspacing="0" cellpadding="0" style="width:100%;margin:18px 0;background:#fff;border:2px solid #e2e8f0;border-radius:12px;">
             <tr><td style="padding:24px;">
                 <div style="font-size:18px;font-weight:bold;color:#1e293b;margin-bottom:12px;">📈 Code Quality Analysis (SonarQube)</div>
-                <a href="http://185.100.212.76:12345/" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;display:inline-block;">Open Dashboard</a>
+                <a href="http://127.0.0.0:12345/" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;font-size:13px;font-weight:600;display:inline-block;">Open Dashboard</a>
             </td></tr>
         </table>
     </td></tr>
@@ -299,14 +299,14 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info
         
             <!-- First Row of Buttons -->
             <div style="margin-bottom: 15px; text-align:center;">
-              <a href="http://185.100.212.76:8200/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🌐 Application URL</a>
-              <a href="http://185.100.212.76:1234/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🤖 Jenkins Dashboard</a>
+              <a href="http://127.0.0.0:8200/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🌐 Application URL</a>
+              <a href="http://127.0.0.0:1234/" target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🤖 Jenkins Dashboard</a>
             </div>
         
             <!-- Second Row of Buttons -->
             <div style="text-align:center;">
-              <a href="http://185.100.212.76:1234/job/Dwinzo-Beta-Backend-Sonar/${env.BUILD_NUMBER}/artifact/backend-sca-report/dependency-check-report.html" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🛡️ OWASP Dependency-Check</a>
-              <a href="http://185.100.212.76:5678/a/grafana-metricsdrilldown-app/drilldown?..." target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">👁️ Grafana Dashboard</a>
+              <a href="http://127.0.0.0:1234/job/Dwinzo-Beta-Backend-Sonar/${env.BUILD_NUMBER}/artifact/backend-sca-report/dependency-check-report.html" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">🛡️ OWASP Dependency-Check</a>
+              <a href="http://127.0.0.0:5678/a/grafana-metricsdrilldown-app/drilldown?..." target="_blank" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);color:#fff;padding:14px 28px;border-radius:25px;text-decoration:none;font-weight:600;font-size:14px;display:inline-block;margin:8px 10px;">👁️ Grafana Dashboard</a>
             </div>
         
           </td>
@@ -360,7 +360,7 @@ Date: ${currentTime}
 Branch: ${env.BRANCH_NAME ?: 'main'}
 Quick Access:
 - Build URL: ${env.BUILD_URL}
-- SonarQube: http://185.100.212.76:12345/
+- SonarQube: http://127.0.0.0:12345/
 Reports:
 ✓ Dependency Check
 ✓ Gitleaks Scan  
